@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rolo Trip | Descubre Bogotá</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Estilos Custom -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+    <!-- LADO IZQUIERDO: LOGO -->
+    <div class="brand-container">
+    <a href="#hero">
+        <img src="imagenes/logo-rolotrip.png" alt="Rolo Trip Logo" class="brand-logo-img">
+    </a>
+</div>
+
+    <!-- CENTRO: MENÚ DE NAVEGACIÓN -->
+    <nav class="nav-menu">
+        <a href="#hero" class="nav-link active" id="nav-home">Inicio</a>
+        <a href="#experiences" class="nav-link" id="nav-exp">Experiencias</a>
+        <a href="#map-section" class="nav-link" id="nav-map">Mapa</a>
+        <a href="#map-section" class="nav-link" id="nav-map">¿Por que Rolotrip?</a>
+    </nav>
+
+        <!-- SELECTOR DE IDIOMA DROPDOWN -->
+        <div class="lang-selector">
+            <button type="button" class="lang-btn" onclick="toggleLangDropdown(event)">
+                <svg class="flag-icon" id="current-flag" viewBox="0 0 640 480" width="18" height="14">
+                    <path fill="#ffda44" d="M0 0h640v240H0z"/>
+                    <path fill="#003087" d="M0 240h640v120H0z"/>
+                    <path fill="#d80027" d="M0 360h640v120H0z"/>
+                </svg>
+                <span id="current-lang-code">ES</span>
+                <span class="arrow">▾</span>
+            </button>
+
+            <div id="lang-dropdown" class="lang-dropdown">
+                <div class="lang-option active" onclick="selectLanguage('es', 'ES', event)">
+                    <svg class="flag-icon" viewBox="0 0 640 480" width="18" height="14">
+                        <path fill="#ffda44" d="M0 0h640v240H0z"/>
+                        <path fill="#003087" d="M0 240h640v120H0z"/>
+                        <path fill="#d80027" d="M0 360h640v120H0z"/>
+                    </svg>
+                    <span>es - Español</span>
+                </div>
+                <div class="lang-option" onclick="selectLanguage('en', 'EN', event)">
+                    <svg class="flag-icon" viewBox="0 0 640 480" width="18" height="14">
+                        <path fill="#00247d" d="M0 0h640v480H0z"/>
+                        <path fill="#fff" d="m67 0 253 189L573 0h67v50L387 240l253 190v50h-67L320 291 67 480H0v-50l253-190L0 50V0h67z"/>
+                        <path fill="#cf142b" d="M277 0v480h86V0h-86zM0 197v86h640v-86H0z"/>
+                    </svg>
+                    <span>en - English</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <<!-- HERO CON VIDEO DE FONDO Y DEGRADADO A NEGRO -->
+<section class="hero-video-section" id="hero">
+    <!-- VIDEO DE FONDO (Puedes cambiar el src por tu video en imagenes/ o mp4 externo) -->
+    <video class="hero-video" autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=1600&q=80">
+        <source src="C:\Users\Nicolas Montaño\Documents\ESTUDIO\UNAD\2026 ll\APLICACIONES MULTIMEDIA\ROLOTRIP\imagenes\video-bogota.mp4" type="video/mp4">
+        Tu navegador no soporta videos en HTML5.
+    </video>
+
+    <!-- CAPA CON DIFUMINADO NEGRO (GRADIENTE) -->
+    <div class="hero-overlay"></div>
+
+    <!-- CONTENIDO SUPERPUESTO -->
+    <div class="hero-content-wrapper">
+        <div class="hero-text-box">
+            <h1 id="hero-title">Conoce otra cara de Bogotá</h1>
+            <p id="hero-subtitle">Descubre lugares únicos, experiencias locales y la auténtica cultura rola.</p>
+            
+            <div class="hero-buttons">
+                <a href="#experiences" class="btn-primary" id="hero-btn-exp">Explorar experiencias</a>
+                <a href="#about" class="btn-outline" id="hero-btn-about">¿Por qué Rolo Trip?</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- SECCIÓN PROPÓSITO ROLO TRIP -->
+<section class="purpose-section" id="about">
+    <div class="purpose-header">
+        <h2>¿Por qué explorar Bogotá con Rolo Trip?</h2>
+        <p>Nuestro propósito es conectar a viajeros y locales con la verdadera esencia de la capital.</p>
+    </div>
+
+    <div class="purpose-grid">
+    <!-- Tarjeta 1: Comercio Local -->
+    <div class="purpose-card card-with-bg">
+        <img src="imagenes/cultura.jpg" alt="Café de origen en Bogotá" class="purpose-card-img">
+        <div class="purpose-card-overlay"></div>
+        <div class="purpose-card-content">
+            <h3>Apoya al comercio local</h3>
+            <p>En cada recorrido apoyas a cafés de origen, emprendimientos independientes y guías locales de cada localidad.</p>
+        </div>
+    </div>
+
+    <!-- Tarjeta 2: Cultura Rola -->
+    <div class="purpose-card card-with-bg">
+        <img src="imagenes/feria.png" alt="Grafiti y cultura en Bogotá" class="purpose-card-img">
+        <div class="purpose-card-overlay"></div>
+        <div class="purpose-card-content">
+            <h3>Conexión cultura rola</h3>
+            <p>Más de 50 experiencias urbanas que te acercan al arte del grafiti, la historia patrimonial y la gastronomía auténtica.</p>
+        </div>
+    </div>
+
+    <!-- Tarjeta 3: Turismo Sostenible -->
+    <div class="purpose-card card-with-bg">
+        <img src="imagenes/maturaleza.jpeg" alt="Ciclismo urbano y turismo consciente" class="purpose-card-img">
+        <div class="purpose-card-overlay"></div>
+        <div class="purpose-card-content">
+            <h3>Turismo urbano consciente</h3>
+            <p>Promovemos la movilidad sostenible en bicicleta, caminatas comunitarias y el respeto por las dinámicas del barrio.</p>
+        </div>
+    </div>
+</div>
+</section>
+
+    <!-- Script Principal -->
+    <script src="main.js"></script>
+</body>
+</html>
